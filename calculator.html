@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table border="1";>
+<tr>
+<td colspan="4">
+<input type="Text" id="input" value="0">
+</tr>
+<td onclick="digitPressButton(7)">7</td>
+<td onclick="digitPressButton(8)">8</td>
+<td onclick="digitPressButton(9)">9</td>
+<td onclick="digitPressButton('*')">x</td>
+</tr>
+<td onclick="digitPressButton(4)">4</td>
+<td onclick="digitPressButton(5)">5</td>
+<td onclick="digitPressButton(6)">6</td>
+<tdonclick="digitPressButton('-')">-</td>
+</tr>
+<tr>
+<td onclick="digitPressButton(1)">1</td>
+<td onclick="digitPressButton(2)">2</td>
+<td onclick="digitPressButton(3)">3</td>
+<td onclick="optButPres('+')">+</td>
+</tr>
+<tr>
+<td colspan="2"onclick="digitPressButton(0)">0</td>
+<td onclick="btnACpressed()">AC</td>
+<td onclick="digitPressButton('/')">/<td>
+</tr>
+<tr>
+<td cospan="2" onclick="digitPressButton(=)">=</td>
+</tr>
+
+<script>
+var newLine = true;
+var currentValue;
+var value1;
+function digitPressButton(button)
+{
+if(newLine)
+{
+document.getElementById("input").value = button;
+newLine = false;
+}
+else
+
+{
+
+var currentValue = document.getElementById("input").value;
+document.getElementById("input").value = currentValue + button;
+}
+
+}
+
+function btnACpressed()
+{
+document.getElementById("input").value = 0;
+newLine = true;
+}
+
+function optButPres(operator)
+{
+currentValue = operator;
+value1 = parseInt(document.getElementById("input").value);
+newLine = true;
+} 
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
